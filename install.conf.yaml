@@ -5,3 +5,4 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.vim:
+    ~/.p10k.zsh: 
