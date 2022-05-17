@@ -1,6 +1,4 @@
+First installation:
 ```sh
-sudo apt install zsh
-chsh -s $(which zsh)
-echo $SHELL
-apt install zsh
+./install -c install.conf.first.yaml
 ```
