@@ -8,6 +8,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+      force: true
     ~/.vim:
     ~/.p10k.zsh: 
