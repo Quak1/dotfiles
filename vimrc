@@ -1,8 +1,3 @@
-filetype plugin on
-
-" Copy indent from current line when starting a new line
-set autoindent
-
 " Comments in Vimscript start with a `"`.
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
@@ -83,3 +78,15 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+
+filetype plugin on
+
+" One Half Dark theme
+set cursorline
+set termguicolors
+colorscheme onehalfdark
+
+" Copy indent from current line when starting a new line
+set autoindent
+
