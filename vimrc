@@ -85,7 +85,7 @@ filetype plugin on
 " One Half Dark theme
 set cursorline
 set termguicolors
-colorscheme onehalfdark
+colorscheme onedark
 
 " Copy indent from current line when starting a new line
 set autoindent
