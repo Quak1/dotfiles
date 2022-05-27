@@ -1,3 +1,4 @@
+" MIT Missing Semester basic setup {{{
 " Comments in Vimscript start with a `"`.
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
@@ -78,16 +79,39 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+"}}}
 
-
+" SETTINGS {{{
 filetype plugin on
 
+" Search down into subfolders
+" Provides tab-completion for all file-related task
+set path+=**
+
+" Display all matching files when tab complete
+set wildmenu
+set foldmethod=marker
+
+" Copy indent from current line when starting a new line
+set autoindent
+"}}}
+
+" THEMES {{{
 " One Half Dark theme
 set cursorline
 set termguicolors
 set term=xterm-256color
 colorscheme onedark
+"}}}
 
-" Copy indent from current line when starting a new line
-set autoindent
+" PLUGINS {{{
+" ALE{{{
+let g:ale_linters = {
+\   'python': ['flake8']
+\}
+let g:ale_fixers = {
+\   '*': ['trim_whitespace'],
+\   'python': ['black']
+\}"}}}
 
+"}}}
