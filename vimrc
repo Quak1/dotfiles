@@ -94,6 +94,21 @@ set foldmethod=marker
 
 " Copy indent from current line when starting a new line
 set autoindent
+
+" show trailing whitespace chars
+set list
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=5
+
+" Auto read when a file is changed on disk
+set autoread
+
+" Turn on spell check for certain filetypes automatically
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
 "}}}
 
 " THEMES {{{
@@ -106,6 +121,7 @@ colorscheme onedark
 
 " PLUGINS {{{
 " ALE{{{
+let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \   'python': ['flake8']
 \}
