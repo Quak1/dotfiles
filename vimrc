@@ -128,6 +128,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
 \   'python': ['black']
-\}"}}}
-
+\}"
+let g:ale_python_flake8_options = "--max-line-length 88"
+}}}
 "}}}
