@@ -130,7 +130,11 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'preservim/nerdtree'
 
+" Snippets engine and bundle
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+
 call plug#end()
+
 " ALE {{{
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
@@ -144,11 +148,15 @@ let g:ale_fixers = {
 \}"
 let g:ale_python_flake8_options = "--max-line-length 88"
 "}}}
-
 " NERDTree {{{
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+" }}}
+" UltiSnips {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 "}}}
