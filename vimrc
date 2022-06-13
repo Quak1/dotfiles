@@ -123,6 +123,12 @@ colorscheme onedark
 call plug#begin()
 
 Plug 'preservim/nerdcommenter'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 " ALE {{{

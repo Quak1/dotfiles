@@ -2,24 +2,3 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vim/pack/plugins/start/nerdcommenter"]
-	path = vim/pack/plugins/start/nerdcommenter
-	url = https://github.com/preservim/nerdcommenter.git
-[submodule "vim/pack/plugins/start/ale"]
-	path = vim/pack/plugins/start/ale
-	url = https://github.com/dense-analysis/ale.git
-[submodule "vim/pack/plugins/start/vim-polyglot"]
-	path = vim/pack/plugins/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "vim/pack/airblade/start/vim-gitgutter"]
-	path = vim/pack/airblade/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/pack/tpope/start/surround"]
-	path = vim/pack/tpope/start/surround
-	url = https://tpope.io/vim/surround.git
-[submodule "vim/pack/plugins/start/vim-closetag"]
-	path = vim/pack/plugins/start/vim-closetag
-	url = https://github.com/alvan/vim-closetag.git
-[submodule "vim/pack/plugins/start/nerdtree"]
-	path = vim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
