@@ -17,3 +17,9 @@
 [submodule "vim/pack/tpope/start/surround"]
 	path = vim/pack/tpope/start/surround
 	url = https://tpope.io/vim/surround.git
+[submodule "vim/pack/plugins/start/vim-closetag"]
+	path = vim/pack/plugins/start/vim-closetag
+	url = https://github.com/alvan/vim-closetag.git
+[submodule "vim/pack/plugins/start/nerdtree"]
+	path = vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
