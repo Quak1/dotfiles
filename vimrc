@@ -120,6 +120,11 @@ colorscheme onedark
 "}}}
 
 " PLUGINS {{{
+call plug#begin()
+
+Plug 'preservim/nerdcommenter'
+
+call plug#end()
 " ALE {{{
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
