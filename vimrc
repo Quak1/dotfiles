@@ -120,15 +120,24 @@ colorscheme onedark
 "}}}
 
 " PLUGINS {{{
-" ALE{{{
+" ALE {{{
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-\   'python': ['flake8']
+\   'python': ['flake8'],
+\   'javascript': ['']
 \}
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
-\   'python': ['black']
+\   'python': ['black'],
+\   'javascript': ['prettier_standard']
 \}"
 let g:ale_python_flake8_options = "--max-line-length 88"
-}}}
+"}}}
+
+" NERDTree {{{
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+" }}}
 "}}}
