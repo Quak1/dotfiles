@@ -112,10 +112,18 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 "}}}
 
 " THEMES {{{
-" One Half Dark theme
+"set Vim-specific sequences for RGB colors
+"fix colors when $TERM=screen-256color
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" onedark configuration 
 set cursorline
-set termguicolors
-set term=xterm-256color
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 colorscheme onedark
 "}}}
 
@@ -126,6 +134,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'joshdick/onedark.vim'
 
 " Auto close html tags
 Plug 'alvan/vim-closetag'
