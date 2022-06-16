@@ -123,15 +123,15 @@ colorscheme onedark
 call plug#begin()
 
 Plug 'preservim/nerdcommenter'
-"Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
-Plug 'alvan/vim-closetag'
-Plug 'preservim/nerdtree'
 
-" Snippets engine and bundle
-"Plug 'sirver/ultisnips' | 
+" Auto close html tags
+Plug 'alvan/vim-closetag'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
+" Snippets to use with coc-snippets
 Plug 'honza/vim-snippets'
 
 " Conque of Completion
@@ -139,29 +139,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-" ALE {{{
-let g:ale_fix_on_save = 1
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'javascript': ['']
-\}
-let g:ale_fixers = {
-\   '*': ['trim_whitespace'],
-\   'python': ['black'],
-\}"
-let g:ale_python_flake8_options = "--max-line-length 88"
-"}}}
-" NERDTree {{{
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-" }}}
-" UltiSnips {{{
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" }}}
 " CoC {{{
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -186,12 +163,12 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+"if has("nvim-0.5.0") || has("patch-8.1.1564")
+  "" Recently vim can merge signcolumn and number column into one
+  "set signcolumn=number
+"else
+  "set signcolumn=yes
+"endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -330,4 +307,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "}}}
+" CoC extensions {{{
+nmap <leader>e :CocCommand explorer<CR>
+" }}}
 "}}}
