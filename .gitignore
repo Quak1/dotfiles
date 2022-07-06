@@ -3,3 +3,4 @@
 *.swm
 *.swn
 vim/plugged
+packer_compiled.lua
