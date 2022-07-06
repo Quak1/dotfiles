@@ -130,11 +130,16 @@ colorscheme onedark
 " PLUGINS {{{
 call plug#begin()
 
-Plug 'preservim/nerdcommenter'
+" Commentary
+Plug 'tpope/vim-commentary'
+noremap <C-_> :Commentary<CR>
+inoremap <C-_> <ESC>:Commentary<CR>
+
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'joshdick/onedark.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Auto close html tags
 Plug 'alvan/vim-closetag'
@@ -317,6 +322,11 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "}}}
 " CoC extensions {{{
-nmap <leader>e :CocCommand explorer<CR>
+" nnoremap <leader>e :CocCommand explorer<CR>
+nnoremap <C-b> :CocCommand explorer<CR>
 " }}}
 "}}}
+
+" Key Mappings {{{
+nnoremap 0 $
+" }}}
