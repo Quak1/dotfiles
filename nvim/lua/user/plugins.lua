@@ -44,6 +44,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "dstein64/vim-startuptime"
   use "tpope/vim-surround"
+  use 'lewis6991/impatient.nvim'
 
   -- Colorschemes
   use 'navarasu/onedark.nvim' -- One Dark color scheme
