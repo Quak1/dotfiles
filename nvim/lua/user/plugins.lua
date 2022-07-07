@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use "dstein64/vim-startuptime"
   use "tpope/vim-surround"
   use 'lewis6991/impatient.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Colorschemes
   use 'navarasu/onedark.nvim' -- One Dark color scheme
