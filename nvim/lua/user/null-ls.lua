@@ -4,10 +4,11 @@ local diagnostics = null_ls.builtins.diagnostics
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
+  debug = true,
   sources = {
     formatting.prettier,
-    -- formatting.stylua,
-    diagnostics.eslint,
+    formatting.stylua,
+    diagnostics.eslint_d,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
