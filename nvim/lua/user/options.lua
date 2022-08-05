@@ -1,4 +1,4 @@
-o = vim.opt
+local o = vim.opt
 
 -- :help options
 --o.backup = false                          -- creates a backup file
