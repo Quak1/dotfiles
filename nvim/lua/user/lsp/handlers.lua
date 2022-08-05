@@ -61,23 +61,32 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, bufopts)
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
-	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, bufopts)
-	vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
+	-- nvim-lspconfig/test/minimal_init.lua
+	local opts = { buffer = bufnr, noremap = true, silent = true }
 
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-	-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-	-- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-	-- vim.keymap.set('n', '<leader>f', vim.diagnostic.open.float, bufopts)
-	-- vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+	vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+	vim.keymap.set("n", "<space>wl", function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, opts)
+	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+	vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
+	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
+
+	-- nvim-lspconfig/README.md - suggested configuration
+	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+	vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, opts)
 end
 
 M.on_attach = function(client, bufnr)
