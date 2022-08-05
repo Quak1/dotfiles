@@ -40,7 +40,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 keymap("n", "<esc>", ":noh<CR>", opts) -- disable search highlight temporarily
-keymap('n', '<leader>f', vim.lsp.buf.formatting_sync, opts) -- formart file
+keymap("n", "<leader>f", vim.lsp.buf.formatting_sync, opts) -- formart file
 
 ---------- Insert ----------
 
@@ -74,9 +74,12 @@ keymap("n", "ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<c-t>", ":Telescope live_grep<CR>", opts)
 
 ---------- Comment.nvim ---------
-keymap("n", "<C-_>",
-  "v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
-  { expr = true, remap = true })
+keymap(
+	"n",
+	"<C-_>",
+	"v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
+	{ expr = true, remap = true }
+)
 keymap("x", "<C-_>", "<Plug>(comment_toggle_blockwise_visual)", opts)
 
 -- Nvimtree
