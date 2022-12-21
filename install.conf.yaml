@@ -7,8 +7,7 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.vimrc: vimrc
-    ~/.zshrc:
-      force: true
-    ~/.tmux.conf:
     ~/.config/nvim: nvim
+    ~/.tmux.conf: tmux
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
