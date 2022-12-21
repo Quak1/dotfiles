@@ -10,7 +10,6 @@
     ~/.vimrc: vimrc
     ~/.zshrc:
       force: true
-    ~/.vim:
     ~/.p10k.zsh: 
     ~/.tmux.conf:
     ~/.config/nvim: nvim
