@@ -60,3 +60,4 @@ require("bufferline").setup({
 		-- end
 	},
 })
+

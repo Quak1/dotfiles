@@ -1,22 +1,52 @@
+local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Shorten function name
-local keymap = vim.keymap.set
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+-- set leader
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+-- open file explorer
+keymap("n", "<leader>e", vim.cmd.Ex)
 
-vim.cmd([[command W w]])
+-- keep cursor at same place
+keymap("n", "J", "mzJ`z")
+
+-- center cursor with movement
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+
+-- keep cursor in the middle when searching
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
+-- deletes into void register before pasting
+keymap("x", "<leader>p", [["_dP]])
+
+-- copy into system register
+keymap({ "n", "v" }, "<leader>y", [["+y]])
+keymap("n", "<leader>Y", [["+Y]])
+
+-- delete to void register
+keymap({ "n", "v" }, "<leader>d", [["_d]])
+
+-- disable Q
+keymap("n", "Q", "<nop>")
+
+-- format file
+keymap("n", "<leader>f", vim.lsp.buf.format)
+
+-- quickfix navigation
+--keymap("n", "<C-k>", "<cmd>cnext<CR>zz")
+--keymap("n", "<C-j>", "<cmd>cprev<CR>zz")
+keymap("n", "<leader>k", "<cmd>lnext<CR>zz")
+keymap("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- change word under cursor in the whole file
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- make file executable
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+
 ---------- Normal ----------
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -39,10 +69,9 @@ keymap("n", "<C-q>", ":bd<CR>", opts) -- close buffer
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
-keymap("n", "<esc>", ":noh<CR>", opts) -- disable search highlight temporarily
-keymap("n", "<leader>f", vim.lsp.buf.formatting_sync, opts) -- formart file
+-- disable search highlight temporarily
+keymap("n", "<esc>", ":noh<CR>", opts)
 
----------- Insert ----------
 
 ---------- Visual ----------
 -- Stay in indent mode
@@ -52,7 +81,6 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
 
 ---------- Visual Block ----------
 -- Move text up and down
@@ -70,17 +98,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 ---------- Telescope ---------
 --keymap("n", "ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<c-t>", ":Telescope live_grep<CR>", opts)
+--keymap("n", "ff", ":Telescope find_files<CR>", opts)
+--keymap("n", "<c-t>", ":Telescope live_grep<CR>", opts)
 
 ---------- Comment.nvim ---------
-keymap(
-	"n",
-	"<C-_>",
-	"v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
-	{ expr = true, remap = true }
-)
-keymap("x", "<C-_>", "<Plug>(comment_toggle_blockwise_visual)", opts)
+--keymap(
+	--"n",
+	--"<C-_>",
+	--"v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
+	--{ expr = true, remap = true }
+--)
+--keymap("x", "<C-_>", "<Plug>(comment_toggle_blockwise_visual)", opts)
 
 -- Nvimtree
-keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
+--keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
