@@ -1,3 +1,9 @@
+- Install Nvim
+```sh
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+sudo apt install ./nvim-linux64.deb
+```
+
 - Install zsh
 ```sh
 sudo apt install zsh
