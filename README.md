@@ -1,4 +1,13 @@
-## Setup Git
+## WSL
+- Install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+```sh
+wsl --install
+```
+
+- [Hack NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+- [Overnight Slumber](https://windowsterminalthemes.dev/?theme=Overnight%20Slumber) Theme
+
+## Git
 - Install git
 ```sh
 sudo apt update && sudo apt upgrade
@@ -26,14 +35,20 @@ cat ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
 
-## Install [Nvim](https://github.com/neovim/neovim)
+
+## [Nvim](https://github.com/neovim/neovim) setup
 - Installation
 ```sh
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 sudo apt install ./nvim-linux64.deb
 ```
+- Uninstall
+```sh
+sudo apt -y purge neovim
+```
 
-- Install build-essential ([Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) requirement)
+- Install `build-essential` ([Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) requirement)
+
 Some lean Ubuntu/Debian distributions (like Docker containers or the "minimal" versions) doesn't include build tools like gcc & its friends. So, the easiest & by the far the most convenient way to get a C Compiler installed (and working) is to install the build essentials package.
 ```sh
 sudo apt-get update && sudo apt-get install build-essential
@@ -43,9 +58,9 @@ sudo apt-get update && sudo apt-get install build-essential
 ```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
  ```
- 
 
-## Install zsh
+
+## zsh setup
 ```sh
 sudo apt install zsh
 chsh -s $(which zsh)
