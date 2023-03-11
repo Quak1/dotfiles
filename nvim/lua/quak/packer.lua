@@ -1,5 +1,5 @@
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+--vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim') -- Have packer manage itself
@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 
     -- Colorschemes
     use('navarasu/onedark.nvim')
+    use { "bluz71/vim-nightfly-colors", as = "nightfly" }
 
     -- Telescope
     use({
