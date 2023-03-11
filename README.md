@@ -1,5 +1,33 @@
-## Install Nvim
-- [Nvim](https://github.com/neovim/neovim)
+## Setup Git
+- Install git
+```sh
+sudo apt update && sudo apt upgrade
+sudo apt-get install git
+```
+
+- Generate a SSH key
+```sh
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+- Add SSH key to ssh-agent
+```sh
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+- Add key to [account](https://github.com/settings/keys)
+```sh
+cat ~/.ssh/id_ed25519.pub
+```
+
+- Test connection (github)
+```sh
+ssh -T git@github.com
+```
+
+## Install [Nvim](https://github.com/neovim/neovim)
+- Installation
 ```sh
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 sudo apt install ./nvim-linux64.deb
@@ -17,7 +45,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
  ```
  
 
-- Install zsh
+## Install zsh
 ```sh
 sudo apt install zsh
 chsh -s $(which zsh)
