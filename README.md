@@ -78,3 +78,34 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ## Dotbot
 - Run dotbot: `./install`
   - Can update dotbot with: `git submodule update --remote dotbot`
+
+## Node
+- Install [nvm](https://github.com/nvm-sh/nvm)
+```sh
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+- Verify installation
+```sh
+command -v nvm
+```
+
+- Install desired version of node
+```sh
+nvm ls
+nvm ls-remote
+nvm install --lts
+nvm install node
+```
+
+- Verify node installation
+```sh
+node --version
+npm --version
+```
+
+- Change between node versions
+```sh
+nvm use --lts
+nvm use node
+nvm use v8.2.1
+```
