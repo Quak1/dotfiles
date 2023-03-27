@@ -35,3 +35,5 @@ vim.opt.colorcolumn = "80"
 
 -- disable mouse support
 vim.opt.mouse = ""
+
+vim.opt.cursorline = true
