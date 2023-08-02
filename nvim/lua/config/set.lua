@@ -23,8 +23,6 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -37,3 +35,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.mouse = ""
 
 vim.opt.cursorline = true
+
+-- set colors for multiple plugins
+vim.opt.termguicolors = true
+vim.opt.syntax = "enable"

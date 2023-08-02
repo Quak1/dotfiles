@@ -1,4 +1,5 @@
-require("bufferline").setup({
+return {
+    "akinsho/bufferline.nvim",
 	options = {
 		-- mode = "buffers", -- can also be set to "tabs" to see tabpages
 		-- themable = false -- whether or not the highlights for this plugin can be overriden.
@@ -59,5 +60,5 @@ require("bufferline").setup({
 		--     return buffer_a.modified > buffer_b.modified
 		-- end
 	},
-})
+}
 

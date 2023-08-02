@@ -1,16 +1,7 @@
-local lsp = require('lsp-zero')
+return {
+    "VonHeikemen/lsp-zero.nvim",
+    config = function ()
+        require("lsp-zero.settings").preset({})
+    end
+}
 
-lsp.preset('recommended')
-
--- Fix Undefined global 'vim'
---lsp.configure('sumneko_lua', {
---    settings = {
---        Lua = {
---            diagnostics = {
---                globals = { 'vim' }
---            }
---        }
---    }
---})
-
-lsp.setup()

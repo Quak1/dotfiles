@@ -2,7 +2,7 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- set leader
-vim.g.mapleader = " "
+--vim.g.mapleader = " "
 
 -- open file explorer
 keymap("n", "<leader>e", vim.cmd.Ex)
@@ -100,6 +100,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 --keymap("n", "ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 --keymap("n", "ff", ":Telescope find_files<CR>", opts)
 --keymap("n", "<c-t>", ":Telescope live_grep<CR>", opts)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
 
 ---------- Comment.nvim ---------
 --keymap(
@@ -112,3 +118,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvimtree
 --keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
+
+---------- vim Fugitive -------------
+keymap("n", "<leader>gs", vim.cmd.Git)
+
+----------- undotree ---------------
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
