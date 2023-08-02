@@ -22,7 +22,7 @@ require('lazy').setup({
 
     -- Colorschemes
     'navarasu/onedark.nvim',
-    { "bluz71/vim-nightfly-colors", as = "nightfly" },
+    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 
     -- Telescope
     {
@@ -70,8 +70,7 @@ require('lazy').setup({
     -- Tab and status lines
     {
         'akinsho/bufferline.nvim',
-        tag = "v3.*",
-        dependencies = 'nvim-tree/nvim-web-devicons'
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     --{ "nvim-lualine/lualine.nvim", dependencies = "kyazdani42/nvim-web-devicons" },
 
