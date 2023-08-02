@@ -8,6 +8,3 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.config/nvim: nvim
-    ~/.tmux.conf: tmux
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
