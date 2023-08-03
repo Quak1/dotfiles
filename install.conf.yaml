@@ -3,8 +3,13 @@
       create: true
       relink: true
 
-- clean: ['~']
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
 
 - link:
     ~/.gitconfig: gitconfig
     ~/.config/nvim: nvim
+    ~/.config/fish/configh.fish: fish
+    ~/.config/kitty: kitty
