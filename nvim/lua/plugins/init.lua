@@ -1,7 +1,7 @@
 return {
     "mbbill/undotree",
     --"tpope/vim-fugitive",
-    "tpope/vim-surround",
+    --"tpope/vim-surround",
     --"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
     --"dstein64/vim-startuptime",
     --"lewis6991/impatient.nvim",
@@ -43,8 +43,8 @@ return {
             { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
+            { 'L3MON4D3/LuaSnip' }, -- Snippet engine
+            { 'rafamadriz/friendly-snippets' }, -- Snippets collection
         }
     },
 
