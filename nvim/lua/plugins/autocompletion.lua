@@ -34,6 +34,8 @@ return {
       "onsails/lspkind.nvim",
     },
     opts = function()
+      require('lsp-zero').extend_cmp()
+
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local lspkind = require("lspkind")
