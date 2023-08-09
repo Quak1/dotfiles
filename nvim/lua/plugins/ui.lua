@@ -60,10 +60,6 @@ return {
             "filename",
             path = 1,
           },
-          {
-            function() return require("nvim-navic").get_location() end,
-            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-          },
         },
 
         lualine_x = {
@@ -106,8 +102,4 @@ return {
     },
   },
 
-
-  {
-    "SmiteshP/nvim-navic",
-  },
 }
