@@ -1,7 +1,13 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter",
+  build = ':TSUpdate',
+
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = { "TSUpdateSync" },
+
+  opts = {
     -- A list of parser names, or "all"
-    ensure_installed = { "lua", "javascript", "typescript" },
+    ensure_installed = { "lua", "javascript", "typescript", "html", "json" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -13,11 +19,19 @@ return {
     -- List of parsers to ignore installing (for "all")
     -- ignore_install = { "javascript" },
 
+    indent = { enable = true },
     highlight = {
-        -- `false` will disable the whole extension
-        enable = true,
-
-        -- list of language that will be disabled
-        --disable = { "c", "rust" },
+      enable = true,
+      -- disable = { "c", "rust" }, -- list of language that will be disabled
     },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<C-space>",
+        node_incremental = "<C-space>",
+        scope_incremental = false,
+        node_decremental = "<bs>",
+      },
+    },
+  },
 }
