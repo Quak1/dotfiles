@@ -46,7 +46,6 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make file executable
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-
 ---------- Normal ----------
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -71,7 +70,6 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- disable search highlight temporarily
 keymap("n", "<esc>", ":noh<CR>", opts)
-
 
 ---------- Visual ----------
 -- Stay in indent mode
@@ -100,19 +98,19 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 --keymap("n", "ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 --keymap("n", "ff", ":Telescope find_files<CR>", opts)
 --keymap("n", "<c-t>", ":Telescope live_grep<CR>", opts)
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>ps", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
 ---------- Comment.nvim ---------
 --keymap(
-	--"n",
-	--"<C-_>",
-	--"v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
-	--{ expr = true, remap = true }
+--"n",
+--"<C-_>",
+--"v:count == 0 ? '<Plug>(comment_toggle_current_linewise)' : '<Plug>(comment_toggle_linewise_count)'",
+--{ expr = true, remap = true }
 --)
 --keymap("x", "<C-_>", "<Plug>(comment_toggle_blockwise_visual)", opts)
 
