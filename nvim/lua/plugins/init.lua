@@ -34,13 +34,6 @@ return {
         end
     },
 
-    -- Tab and status lines
-    {
-        'akinsho/bufferline.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-    },
-    --{ "nvim-lualine/lualine.nvim", dependencies = "kyazdani42/nvim-web-devicons" },
-
     -- Comment
     --"numToStr/Comment.nvim",
     --"JoosepAlviste/nvim-ts-context-commentstring",
