@@ -27,7 +27,7 @@
         {
           "type": "git",
           "style": "plain",
-          "template": "<default>on</> <b><magenta>{{ .HEAD }}</> <yellow>{{if .BranchStatus }}{{ .BranchStatus }}{{ end }} [{{ if .Staging.Changed }}\uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} | {{ end }}{{ if .Working.Changed }}\uf044 {{ .Working.String }}{{ end }}]</b></> ",
+          "template": "<default>on</> <b><magenta>{{ .HEAD }}</> <yellow>{{if .BranchStatus }}{{ .BranchStatus }} {{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}[{{ end }}{{ if .Staging.Changed }}\uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} | {{ end }}{{ if .Working.Changed }}\uf044 {{ .Working.String }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}]{{ end }}</b></> ",
           "foreground": "#F1502F",
           "properties": {
             "fetch_status": true
