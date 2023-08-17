@@ -11,10 +11,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# prompt renderer
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh-themes/theme.omp.json)"
 
-#eval "$(starship init zsh)"
+export EDITOR=nvim
 
+# Node NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
