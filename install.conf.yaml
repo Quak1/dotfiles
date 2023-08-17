@@ -11,5 +11,5 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.config/nvim: nvim
-    ~/.config/fish/configh.fish: fish
-    ~/.config/kitty: kitty
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.zshrc: zshrc
