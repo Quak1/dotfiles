@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.config/nvim: nvim
+    ~/.config/alacritty/alacritty.toml: alacritty.toml
+    ~/.zshrc: zshrc
