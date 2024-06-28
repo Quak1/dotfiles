@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "var": {
+    "via": "<default>via</>"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "root",
+          "style": "plain",
+          "template": "root | ",
+          "foreground": "red"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "template": "<b>{{ .Path }}</b> ",
+          "foreground": "cyan",
+          "properties": {
+            "style": "full"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "template": "<default>on</> <b><magenta>{{ .HEAD }}</> <yellow>{{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }} [{{ end }}{{ if .Staging.Changed }}\uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} | {{ end }}{{ if .Working.Changed }}\uf044 {{ .Working.String }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}]{{ end }}</b></> ",
+          "foreground": "#F1502F",
+          "properties": {
+            "fetch_status": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "#6CA35E",
+          "fetch_package_manager": true,
+          "template": "{{ .Var.via }} <b>\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}v{{ .Full }}</b>"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#4584b6",
+          "template": "{{ .Var.via}} <b>\ue235 {{ if .Venv }}{{ .Venv }} {{ end }}v{{ .Full }}</b>",
+          "properties": {
+            "display_mode": "context",
+            "fetch_virtual_env": true
+          }
+        },
+        {
+          "type": "lua",
+          "style": "plain",
+          "foreground": "blue",
+          "template": "{{ .Var.via}} <b> v{{ .Full }}</b>"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "executiontime",
+          "foreground": "yellow",
+          "template": "<default>took</> <b>{{ .FormattedMs }}</b> |"
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "lightGreen"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "status",
+          "style": "powerline",
+          "foreground": "lightGreen",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": "\u279c "
+        }
+      ]
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "green",
+    "template": "> "
+  }
+}
