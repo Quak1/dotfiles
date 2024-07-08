@@ -22,6 +22,8 @@ return {
         event = 'InsertEnter',
         dependencies = {
             { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+            { "saadparwaiz1/cmp_luasnip" },
         },
         config = function()
             -- Here is where you configure the autocompletion settings.
@@ -31,6 +33,9 @@ return {
             -- And you can configure cmp even more, if you want to.
             local cmp = require('cmp')
             local cmp_action = lsp_zero.cmp_action()
+
+            -- friendly-snippets
+            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 formatting = lsp_zero.cmp_format({ details = true }),
@@ -49,6 +54,10 @@ return {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)
                     end,
+                },
+                sources = {
+                    { name = "nvim_lsp" },
+                    { name = 'luasnip' },
                 },
             })
         end
