@@ -1,7 +1,7 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v4.x',
         lazy = true,
         config = false,
         init = function()
@@ -71,26 +71,20 @@ return {
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'williamboman/mason-lspconfig.nvim' },
-            { 'lukas-reineke/lsp-format.nvim' },
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
             local lsp_zero = require('lsp-zero')
-            lsp_zero.extend_lspconfig()
 
-            --- if you want to know more about lsp-zero and mason.nvim
-            --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-            lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
+            local lsp_attach = function(client, bufnr)
+                -- see :help lsp-zero-keybindings to learn the available actions
                 lsp_zero.default_keymaps({ buffer = bufnr })
+            end
 
-                -- make sure you use clients with formatting capabilities
-                -- otherwise you'll get a warning message
-                if client.supports_method('textDocument/formatting') then
-                    require('lsp-format').on_attach(client)
-                end
-            end)
+            lsp_zero.extend_lspconfig({
+                capabilities = require("cmp_nvim_lsp").default_capabilities(),
+                lsp_attach = lsp_attach,
+                sign_text = true,
+            })
 
             require('mason-lspconfig').setup({
                 ensure_installed = {},
@@ -101,7 +95,7 @@ return {
                         require('lspconfig')[server_name].setup({})
                     end,
 
-                    -- this is the "custom handler" for `lua_ls`
+                    -- "custom handler" for `lua_ls`
                     lua_ls = function()
                         local lua_opts = lsp_zero.nvim_lua_ls()
                         require('lspconfig').lua_ls.setup(lua_opts)
@@ -109,5 +103,40 @@ return {
                 }
             })
         end
+    },
+
+
+    -- Formatter
+    {
+        "stevearc/conform.nvim",
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
+        keys = {
+            {
+                -- Customize or remove this keymap to your liking
+                "<leader>f",
+                function()
+                    require("conform").format({ async = true, lsp_format = "fallback" })
+                end,
+                mode = "",
+                desc = "Format buffer",
+            },
+        },
+        -- Everything in opts will be passed to setup()
+        opts = {
+            -- Define your formatters
+            formatters_by_ft = {
+                lua = { "stylua" },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
+            },
+            -- Set up format-on-save
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_format = "fallback"
+            },
+            -- Customize formatters
+            formatters = {
+            },
+        },
     }
 }

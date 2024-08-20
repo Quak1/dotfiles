@@ -28,8 +28,8 @@ keymap({ "n", "v" }, "<leader>d", [["_d]])
 -- disable Q
 keymap("n", "Q", "<nop>")
 
--- format file
-keymap("n", "<leader>f", vim.lsp.buf.format)
+-- format file | format shortcut in lsp.lua file
+--keymap("n", "<leader>f", vim.lsp.buf.format)
 
 -- quickfix navigation
 --keymap("n", "<C-k>", "<cmd>cnext<CR>zz")
