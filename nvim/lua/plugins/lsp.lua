@@ -92,6 +92,9 @@ return {
                     -- this first function is the "default handler"
                     -- it applies to every language server without a "custom handler"
                     function(server_name)
+                        if server_name == "tsserver" then
+                            server_name = "ts_ls"
+                        end
                         require('lspconfig')[server_name].setup({})
                     end,
 
