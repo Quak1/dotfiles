@@ -131,6 +131,7 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },
+                javascriptreact = { "prettierd" }
             },
             -- Set up format-on-save
             format_on_save = {
