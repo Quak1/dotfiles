@@ -1,28 +1,33 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            -- A list of parser names, or "all"
-            ensure_installed = {
-                "vimdoc", "javascript", "c", "lua", "jsdoc", "bash",
-            },
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			-- A list of parser names, or "all"
+			ensure_installed = {
+				"vimdoc",
+				"javascript",
+				"c",
+				"lua",
+				"jsdoc",
+				"bash",
+			},
 
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
+			-- Install parsers synchronously (only applied to `ensure_installed`)
+			sync_install = false,
 
-            -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-            auto_install = true,
+			-- Automatically install missing parsers when entering buffer
+			-- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
+			auto_install = true,
 
-            indent = {
-                enable = true
-            },
+			indent = {
+				enable = true,
+			},
 
-            highlight = {
-                -- `false` will disable the whole extension
-                enable = true,
-            }
-        })
-    end
+			highlight = {
+				-- `false` will disable the whole extension
+				enable = true,
+			},
+		})
+	end,
 }
