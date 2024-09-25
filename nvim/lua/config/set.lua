@@ -33,3 +33,9 @@ vim.opt.colorcolumn = "80"
 vim.opt.mouse = ""
 
 vim.opt.cursorline = true
+
+vim.filetype.add({
+	extension = {
+		ejs = "html",
+	},
+})
