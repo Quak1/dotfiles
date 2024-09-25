@@ -29,5 +29,9 @@ return {
 				enable = true,
 			},
 		})
+
+		-- as .ejs files are being handled as html
+		-- register js parsing for html files
+		vim.treesitter.language.register("javascript", "html")
 	end,
 }

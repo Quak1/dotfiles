@@ -103,6 +103,19 @@ return {
 						local lua_opts = lsp_zero.nvim_lua_ls()
 						require("lspconfig").lua_ls.setup(lua_opts)
 					end,
+					-- setup html to honor templating tags while formatting
+					-- https://code.visualstudio.com/docs/languages/html#_formatting
+					html = function()
+						require("lspconfig").html.setup({
+							settings = {
+								html = {
+									format = {
+										templating = true,
+									},
+								},
+							},
+						})
+					end,
 				},
 			})
 		end,
