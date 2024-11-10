@@ -92,8 +92,8 @@ return {
 					-- this first function is the "default handler"
 					-- it applies to every language server without a "custom handler"
 					function(server_name)
-						if server_name == "tsserver" then
-							server_name = "ts_ls"
+						if server_name == "ts_ls" then
+							return
 						end
 						require("lspconfig")[server_name].setup({})
 					end,
@@ -111,6 +111,8 @@ return {
 								html = {
 									format = {
 										templating = true,
+										wrapLineLength = 100,
+										wrapAttributes = "force-aligned",
 									},
 								},
 							},
@@ -119,6 +121,17 @@ return {
 				},
 			})
 		end,
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {
+			settings = {
+				tsserver_plugins = {
+					"@styled/typescript-styled-plugin",
+				},
+			},
+		},
 	},
 
 	-- Formatter
@@ -144,6 +157,7 @@ return {
 				lua = { "stylua" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				javascriptreact = { "prettierd" },
+				pug = { "prettierd" },
 			},
 			-- Set up format-on-save
 			format_on_save = {

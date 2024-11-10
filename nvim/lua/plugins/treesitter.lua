@@ -11,6 +11,8 @@ return {
 				"lua",
 				"jsdoc",
 				"bash",
+				"css",
+				"styled",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
