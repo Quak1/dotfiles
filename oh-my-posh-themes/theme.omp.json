@@ -1,8 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
   "var": {
     "via": "<default>via</>"
+  },
+  "transient_prompt": {
+    "template": "> ",
+    "foreground": "green",
+    "background": "transparent"
   },
   "blocks": [
     {
@@ -10,28 +14,33 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "root",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "root | ",
-          "foreground": "red"
+          "foreground": "red",
+          "type": "root",
+          "style": "plain"
         },
         {
-          "type": "path",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none",
+            "style": "full"
+          },
           "template": "<b>{{ .Path }}</b> ",
           "foreground": "cyan",
-          "properties": {
-            "style": "full"
-          }
+          "type": "path",
+          "style": "plain"
         },
         {
-          "type": "git",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none",
+            "fetch_status": true
+          },
           "template": "<default>on</> <b><magenta>{{ .HEAD }}</> <yellow>{{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }} [{{ end }}{{ if .Staging.Changed }}\uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} | {{ end }}{{ if .Working.Changed }}\uf044 {{ .Working.String }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}]{{ end }}</b></> ",
           "foreground": "#F1502F",
-          "properties": {
-            "fetch_status": true
-          }
+          "type": "git",
+          "style": "plain"
         }
       ]
     },
@@ -40,27 +49,33 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "node",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .Var.via }} <b>\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}v{{ .Full }}</b>",
           "foreground": "#6CA35E",
-          "fetch_package_manager": true,
-          "template": "{{ .Var.via }} <b>\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}v{{ .Full }}</b>"
+          "type": "node",
+          "style": "plain"
         },
         {
-          "type": "python",
-          "style": "plain",
-          "foreground": "#4584b6",
-          "template": "{{ .Var.via}} <b>\ue235 {{ if .Venv }}{{ .Venv }} {{ end }}v{{ .Full }}</b>",
           "properties": {
+            "cache_duration": "none",
             "display_mode": "context",
             "fetch_virtual_env": true
-          }
+          },
+          "template": "{{ .Var.via}} <b>\ue235 {{ if .Venv }}{{ .Venv }} {{ end }}v{{ .Full }}</b>",
+          "foreground": "#4584b6",
+          "type": "python",
+          "style": "plain"
         },
         {
-          "type": "lua",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .Var.via}} <b>\ue620 v{{ .Full }}</b>",
           "foreground": "blue",
-          "template": "{{ .Var.via}} <b> v{{ .Full }}</b>"
+          "type": "lua",
+          "style": "plain"
         }
       ]
     },
@@ -69,40 +84,43 @@
       "alignment": "right",
       "segments": [
         {
-          "type": "executiontime",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "<default>took</> <b>{{ .FormattedMs }}</b> |",
           "foreground": "yellow",
-          "template": "<default>took</> <b>{{ .FormattedMs }}</b> |"
+          "type": "executiontime"
         },
         {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "foreground": "lightGreen",
           "type": "time",
-          "style": "plain",
-          "foreground": "lightGreen"
+          "style": "plain"
         }
       ]
     },
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": "➜ ",
+          "foreground": "lightGreen",
           "type": "status",
           "style": "powerline",
-          "foreground": "lightGreen",
           "foreground_templates": [
             "{{ if gt .Code 0 }}red{{ end }}"
-          ],
-          "properties": {
-            "always_enabled": true
-          },
-          "template": "\u279c "
+          ]
         }
-      ]
+      ],
+      "newline": true
     }
   ],
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "green",
-    "template": "> "
-  }
+  "version": 3
 }
