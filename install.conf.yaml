@@ -14,3 +14,4 @@
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.zshrc: zshrc
+    ~/.config/hypr: hypr
