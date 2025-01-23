@@ -20,3 +20,4 @@
     ~/.config/waybar: hypr/waybar
     ~/.config/wlogout: hypr/wlogout
     ~/.config/niri: niri
+    ~/.config/fuzzel: fuzzel
