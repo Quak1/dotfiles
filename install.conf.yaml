@@ -19,3 +19,4 @@
     ~/.config/swaync: hypr/swaync
     ~/.config/waybar: hypr/waybar
     ~/.config/wlogout: hypr/wlogout
+    ~/.config/niri: niri
