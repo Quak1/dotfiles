@@ -224,6 +224,11 @@ spawn-at-startup "swaybar"
 spawn-at-startup "kanshi"
 spawn-at-startup "swaybg" "-i" "/home/quak/.dotfiles/wallpapers/plants.jpg"
 spawn-at-startup "waybar" "-c" "/home/quak/.dotfiles/niri/waybar/config.jsonc" "-s" "/home/quak/.dotfiles/niri/waybar/style.css"
+spawn-at-startup "xwayland-satellite"
+
+environment {
+    DISPLAY ":1"
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -296,6 +301,11 @@ window-rule {
 window-rule {
     match app-id="Alacritty"
     default-column-width { proportion 0.25;}
+}
+
+window-rule {
+    match app-id="Anki"
+    default-column-width { proportion 0.20;}
 }
 
 binds {
