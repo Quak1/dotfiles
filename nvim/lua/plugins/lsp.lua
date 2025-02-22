@@ -87,7 +87,7 @@ return {
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = {},
+				ensure_installed = { "ts_ls", "lua_ls", "html", "cssls" },
 				handlers = {
 					-- this first function is the "default handler"
 					-- it applies to every language server without a "custom handler"
@@ -111,8 +111,9 @@ return {
 								html = {
 									format = {
 										templating = true,
-										wrapLineLength = 100,
-										wrapAttributes = "force-aligned",
+										wrapLineLength = 1000,
+										-- wrapAttributes = "force-aligned",
+										wrapAttributes = "auto",
 									},
 								},
 							},
