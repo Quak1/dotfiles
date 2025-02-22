@@ -9,4 +9,5 @@
 - Install neovim
     - Install `build-essential` or similar for C compiler requirement
     - Swap `CapsLock `and `Esc`
+    - Install [ripgrep](https://github.com/BurntSushi/ripgrep). Required for live-grep with nvim-telescope
 - Install [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script) if needed.
