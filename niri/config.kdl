@@ -231,6 +231,7 @@ spawn-at-startup "kanshi"
 spawn-at-startup "swaybg" "-i" "/home/quak/.dotfiles/wallpapers/plants.jpg"
 spawn-at-startup "waybar" "-c" "/home/quak/.dotfiles/niri/waybar/config.jsonc" "-s" "/home/quak/.dotfiles/niri/waybar/style.css"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "firefox"
 
 environment {
     DISPLAY ":1"
@@ -283,6 +284,13 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    match app-id="firefox" at-startup=true
+    open-on-workspace "main"
+    default-column-width { proportion 0.5; }
+    open-focused true
 }
 
 // Example: block out two password managers from screen capture.
@@ -542,7 +550,7 @@ binds {
     Alt+Print { screenshot-window; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    // Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
