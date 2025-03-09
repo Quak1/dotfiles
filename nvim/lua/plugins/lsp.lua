@@ -17,6 +17,64 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 return {
+	-- LSP
+	{
+		"neovim/nvim-lspconfig",
+		cmd = { "LspInfo", "LspInstall", "LspStart" },
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "williamboman/mason-lspconfig.nvim" },
+		},
+		config = function()
+			-- Add cmp_nvim_lsp capabilities settings to lspconfig
+			local lspconfig_defaults = require("lspconfig").util.default_config
+			lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+				"force",
+				lspconfig_defaults.capabilities,
+				require("cmp_nvim_lsp").default_capabilities()
+			)
+
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls", "html", "cssls" },
+				handlers = {
+					-- this first function is the "default handler"
+					-- it applies to every language server without a "custom handler"
+					function(server_name)
+						require("lspconfig")[server_name].setup({})
+					end,
+
+					-- setup html to honor templating tags while formatting
+					-- https://code.visualstudio.com/docs/languages/html#_formatting
+					html = function()
+						require("lspconfig").html.setup({
+							settings = {
+								html = {
+									format = {
+										templating = true,
+										wrapLineLength = 1000,
+										-- wrapAttributes = "force-aligned",
+										wrapAttributes = "auto",
+									},
+								},
+							},
+						})
+					end,
+				},
+			})
+		end,
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {
+			settings = {
+				tsserver_plugins = {
+					"@styled/typescript-styled-plugin",
+				},
+			},
+		},
+	},
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
@@ -30,6 +88,7 @@ return {
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
+			{ "hrsh7th/nvim-cmp" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
 		config = function()
@@ -47,6 +106,7 @@ return {
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "buffer" },
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-Space>"] = cmp.mapping.complete(),
@@ -109,69 +169,6 @@ return {
 		end,
 	},
 
-	-- LSP
-	{
-		"neovim/nvim-lspconfig",
-		cmd = { "LspInfo", "LspInstall", "LspStart" },
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "williamboman/mason-lspconfig.nvim" },
-		},
-		config = function()
-			-- Add cmp_nvim_lsp capabilities settings to lspconfig
-			-- This should be executed before you configure any language server
-			local lspconfig_defaults = require("lspconfig").util.default_config
-			lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-				"force",
-				lspconfig_defaults.capabilities,
-				require("cmp_nvim_lsp").default_capabilities()
-			)
-
-			require("mason-lspconfig").setup({
-				ensure_installed = { "ts_ls", "lua_ls", "html", "cssls" },
-				handlers = {
-					-- this first function is the "default handler"
-					-- it applies to every language server without a "custom handler"
-					function(server_name)
-						if server_name == "ts_ls" then
-							return
-						end
-						require("lspconfig")[server_name].setup({})
-					end,
-
-					-- setup html to honor templating tags while formatting
-					-- https://code.visualstudio.com/docs/languages/html#_formatting
-					html = function()
-						require("lspconfig").html.setup({
-							settings = {
-								html = {
-									format = {
-										templating = true,
-										wrapLineLength = 1000,
-										-- wrapAttributes = "force-aligned",
-										wrapAttributes = "auto",
-									},
-								},
-							},
-						})
-					end,
-				},
-			})
-		end,
-	},
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {
-			settings = {
-				tsserver_plugins = {
-					"@styled/typescript-styled-plugin",
-				},
-			},
-		},
-	},
-
 	-- Formatter
 	{
 		"stevearc/conform.nvim",
@@ -180,7 +177,7 @@ return {
 		keys = {
 			{
 				-- Customize or remove this keymap to your liking
-				"<leader>f",
+				"<leader>F",
 				function()
 					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
