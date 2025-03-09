@@ -319,6 +319,7 @@ window-rule {
 
 window-rule {
     match app-id="Anki"
+    exclude title="Browse"
     default-column-width { proportion 0.20; }
 }
 
@@ -332,6 +333,11 @@ window-rule {
 window-rule {
     match app-id="Rquickshare"
     open-floating true
+}
+
+window-rule {
+    match app-id="vlc"
+    default-column-width { }
 }
 
 binds {
@@ -513,7 +519,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
+    // Mod+F { maximize-column; }
+    Mod+F { set-column-width "70%"; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
