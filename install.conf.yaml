@@ -14,10 +14,4 @@
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.zshrc: zshrc
-    ~/.config/hypr: hypr/hypr
-    ~/.config/kanshi: hypr/kanshi
-    ~/.config/swaync: hypr/swaync
-    ~/.config/waybar: hypr/waybar
-    ~/.config/wlogout: hypr/wlogout
-    ~/.config/niri: niri
     ~/.config/fuzzel: fuzzel

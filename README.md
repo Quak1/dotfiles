@@ -1,6 +1,7 @@
 # Dotfiles
 - My preferred terminal emulator is [Alacritty](https://alacritty.org/)
 - Install zsh and alacritty from package manager
+    - `chsh -s $(which zsh)`
 - Install [Oh My Posh](https://ohmyposh.dev/docs/installation/linux)
     - Install Fira Code Nerd Font
     ```bash
