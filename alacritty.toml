@@ -35,3 +35,6 @@ family = "Fira Code Nerd Font"
 
 [terminal.shell]
 program = "/usr/bin/zsh"
+
+[window]
+decorations = "None"
