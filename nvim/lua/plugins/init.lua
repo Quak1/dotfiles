@@ -23,5 +23,5 @@ return {
   -- 	},
   -- },
 
-  { "tpope/vim-surround" },
+  { "tpope/vim-surround", keys = { "cs", "ds", "ys", { "S", mode = "v" } } },
 }

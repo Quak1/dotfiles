@@ -32,3 +32,5 @@ o.colorcolumn = "80"
 -- 		ejs = "html",
 -- 	},
 -- })
+
+o.clipboard = ""
