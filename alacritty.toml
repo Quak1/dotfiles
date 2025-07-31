@@ -38,3 +38,7 @@ program = "/usr/bin/zsh"
 
 [window]
 decorations = "None"
+
+[window.dimensions]
+columns = 94
+lines = 30

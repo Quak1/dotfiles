@@ -41,3 +41,9 @@ calibre-sync() {
 
   echo "\nSync done"
 }
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+alias gitl="git log --oneline"
+alias gitlg="git log --oneline --graph --all"
