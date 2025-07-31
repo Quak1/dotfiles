@@ -3,7 +3,11 @@ return {
   opts = function()
     local cmp = require "cmp"
     local config = require "nvchad.configs.cmp"
-    config.mapping["<Esc>"] = cmp.mapping.abort()
+
+    --config.mapping["<Esc>"] = cmp.mapping.abort()
     --opts.completion.completeopt = "menu,menuone,noselect"
+    --table.insert(config.sources, { name = "nvim_lsp" })
+
+    return config
   end,
 }
