@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 local servers = {
   "html",
   "cssls",
@@ -12,6 +12,8 @@ local servers = {
   "prismals",
   "emmet_language_server",
   "pyright",
+  "gopls",
+  "postgres_lsp",
 }
 vim.lsp.enable(servers)
 

@@ -7,7 +7,9 @@ local options = {
     css = { "prettierd" },
     html = { "prettierd" },
     pug = { "prettierd" },
+    markdown = { "prettierd" },
     python = { "black" },
+    go = { "gofumpt", "golines" },
   },
 
   format_on_save = {
