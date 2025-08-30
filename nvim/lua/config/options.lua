@@ -4,3 +4,8 @@
 local opt = vim.opt
 
 opt.mouse = ""
+opt.autowrite = false
+opt.clipboard = ""
+opt.confirm = false
+opt.colorcolumn = "80"
+opt.conceallevel = 0

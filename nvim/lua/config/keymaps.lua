@@ -3,9 +3,6 @@
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
 
-map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-
 -- Repalce <leader>x... comands with <leader>z...
 -- Plugins: todo-comments, trouble
 map("n", "<leader>x", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
