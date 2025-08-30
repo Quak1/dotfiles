@@ -5,20 +5,15 @@ return {
       colorscheme = "tokyonight",
     },
   },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 10000,
-  },
-  {
-    "akinsho/bufferline.nvim",
-    init = function()
-      local bufline = require("catppuccin.groups.integrations.bufferline")
-      function bufline.get()
-        return bufline.get_theme()
-      end
-    end,
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   init = functio()
+  --     local bufline = require("catppuccin.groups.integrations.bufferline")
+  --     function bufline.get()
+  --       return bufline.get_theme()
+  --     end
+  --   end,
+  -- },
   {
     "folke/tokyonight.nvim",
     lazy = true,
@@ -28,5 +23,6 @@ return {
   },
   {
     "oxfist/night-owl.nvim",
+    lazy = true,
   },
 }
