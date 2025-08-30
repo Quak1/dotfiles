@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "nightfox",
     },
   },
   -- {
@@ -22,7 +22,23 @@ return {
     },
   },
   {
-    "oxfist/night-owl.nvim",
+    "bluz71/vim-nightfly-colors",
+    name = "nightfly",
     lazy = true,
+    priority = 1000,
+    init = function()
+      vim.g.nightflyItalics = false
+    end,
+  },
+  {
+    "thesimonho/kanagawa-paper.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    priority = 1000,
   },
 }
