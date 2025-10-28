@@ -1,0 +1,12 @@
+[[actions]]
+action = "AddToLibrary"
+key_sequence = "f f"
+
+[[actions]]
+action="ToggleLiked"
+key_sequence="C-l"
+target = "PlayingTrack"
+
+[[actions]]
+action="ToggleLiked"
+key_sequence="C-L"
