@@ -23,3 +23,5 @@ map("n", "<leader>zq", function()
     vim.notify(err, vim.log.levels.ERROR)
   end
 end, { desc = "Quickfix List" })
+
+map("n", "<C-k>", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
