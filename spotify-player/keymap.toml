@@ -10,3 +10,7 @@ target = "PlayingTrack"
 [[actions]]
 action="ToggleLiked"
 key_sequence="C-L"
+
+[[keymaps]]
+command = { VolumeChange = { offset = 5 } }
+key_sequence = "="
