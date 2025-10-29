@@ -3,6 +3,7 @@ set-option -g focus-events on
 
 # Proper colors
 set-option -sa terminal-features ',alacritty:RGB,foot:RGB'
+set -g default-terminal "foot"
 
 # remap prefix from 'C-b' to 'C-a'
 unbind C-b
