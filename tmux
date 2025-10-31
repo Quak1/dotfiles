@@ -2,8 +2,8 @@
 set-option -g focus-events on
 
 # Proper colors
-set-option -sa terminal-features ',alacritty:RGB,foot:RGB'
-set -g default-terminal "foot"
+set-option -g default-terminal "tmux-256color"
+set-option -sa terminal-features ',*:RGB'
 
 # remap prefix from 'C-b' to 'C-a'
 unbind C-b
@@ -16,7 +16,7 @@ bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded"
 # start with window and pane with 1 and renumber when window is deleted
 set -g base-index 1
 setw -g pane-base-index 1
-# set -g renumber-windows on
+set -g renumber-windows on
 
 # shorten command delay
 set -g escape-time 0
@@ -25,10 +25,12 @@ set -g escape-time 0
 set-option -g allow-rename off
 
 # enable mouse control 
-# set -g mouse on
+set -g mouse on
 
 # enable vi mode keys
 set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
 # increase scroll history
 # set -g history-limit 5000
