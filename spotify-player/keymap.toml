@@ -14,3 +14,7 @@ key_sequence="C-L"
 [[keymaps]]
 command = { VolumeChange = { offset = 5 } }
 key_sequence = "="
+
+[[keymaps]]
+command = "None"
+key_sequence = "q"
