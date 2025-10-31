@@ -50,6 +50,7 @@ alias gitlg="git log --oneline --graph --all"
 alias venv-activate="source .venv/bin/activate"
 alias postgres-start="postgres -D ~/.local/share/postgres/var"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
+alias spotify_player="TERM=xterm-256color spotify_player"
 
 # Turso
 export PATH="$PATH:/home/quak/.turso"
