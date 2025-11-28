@@ -51,7 +51,12 @@ alias venv-activate="source .venv/bin/activate"
 alias postgres-start="postgres -D ~/.local/share/postgres/var"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 alias spotify_player="TERM=xterm-256color spotify_player"
+alias ncspot="flatpak run io.github.hrkfdn.ncspot"
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
 # Turso
 export PATH="$PATH:/home/quak/.turso"
 
+eval $(thefuck --alias)
+eval "$(zoxide init zsh)"
+alias cd="z"

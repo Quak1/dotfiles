@@ -25,3 +25,4 @@ map("n", "<leader>zq", function()
 end, { desc = "Quickfix List" })
 
 map("n", "<C-k>", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", ",", "@@", { desc = "Replay last used macro" })
