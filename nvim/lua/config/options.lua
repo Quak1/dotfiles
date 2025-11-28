@@ -9,3 +9,4 @@ opt.clipboard = ""
 opt.confirm = false
 opt.colorcolumn = "80"
 opt.conceallevel = 0
+opt.jumpoptions = "view"

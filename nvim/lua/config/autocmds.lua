@@ -13,3 +13,25 @@ vim.filetype.add({
     tmpl = "html",
   },
 })
+
+-- Preserve exact window view (scroll + cursor) when switching buffers
+local view = {}
+vim.api.nvim_create_augroup("SaveWindowViewGroup", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+  group = "SaveWindowViewGroup",
+  pattern = "*",
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    view[buf] = vim.fn.winsaveview()
+  end,
+})
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  group = "SaveWindowViewGroup",
+  pattern = "*",
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    if view[buf] then
+      vim.fn.winrestview(view[buf])
+    end
+  end,
+})
