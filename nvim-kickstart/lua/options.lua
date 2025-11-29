@@ -72,3 +72,8 @@ vim.o.confirm = false
 
 -- Show highlighted colum
 vim.o.colorcolumn = '80'
+
+-- Disable wrap
+vim.o.wrap = false
+
+vim.o.smartindent = true

@@ -3,6 +3,7 @@ return {
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
+
     dependencies = {
       -- Snippet Engine
       {
@@ -57,7 +58,9 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
+        ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -72,7 +75,7 @@ return {
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        -- documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
 
       sources = {
