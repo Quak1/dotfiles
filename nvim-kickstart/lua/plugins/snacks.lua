@@ -7,6 +7,10 @@ return {
   opts = {
     notifier = { enabled = true },
     statuscolumn = { enabled = true },
+    indent = {
+      enabled = true,
+      animate = { enabled = false },
+    },
     explorer = {},
     picker = {
       sources = {
