@@ -77,3 +77,7 @@ vim.o.colorcolumn = '80'
 vim.o.wrap = false
 
 vim.o.smartindent = true
+
+vim.o.tabstop = 2
+vim.o.shiftwidth = 0
+vim.o.expandtab = true
