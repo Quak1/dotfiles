@@ -3,20 +3,7 @@ return {
     'folke/noice.nvim',
     event = 'VeryLazy',
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       'MunifTanjim/nui.nvim',
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      {
-        'rcarriga/nvim-notify',
-        opts = {
-          timeout = 3000,
-          stages = 'static',
-          -- render = 'wrapped-default',
-          max_width = 50,
-        },
-      },
     },
     opts = {
       lsp = {
@@ -33,6 +20,7 @@ return {
         command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
       },
+      notify = { enable = false },
     },
     --stylua: ignore
     keys = {
