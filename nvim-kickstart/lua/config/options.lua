@@ -24,6 +24,11 @@ vim.o.showmode = false
 
 -- Enable break indent
 vim.o.breakindent = true
+-- Fix indent
+vim.o.smartindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 0
+vim.o.expandtab = true
 
 -- Save undo history
 vim.o.undofile = true
@@ -53,8 +58,8 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
-vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.o.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -75,9 +80,3 @@ vim.o.colorcolumn = '80'
 
 -- Disable wrap
 vim.o.wrap = false
-
-vim.o.smartindent = true
-
-vim.o.tabstop = 2
-vim.o.shiftwidth = 0
-vim.o.expandtab = true
