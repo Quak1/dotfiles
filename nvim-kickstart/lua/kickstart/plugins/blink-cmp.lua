@@ -53,12 +53,26 @@ return {
         accept = { auto_brackets = { enabled = true } },
         menu = { draw = { treesitter = { 'lsp' } } },
         documentation = { auto_show = true, auto_show_delay_ms = 200 },
+        list = { selection = { preselect = false, auto_insert = false } },
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          buffer = {
+            -- Make buffer compeletions appear at the end.
+            score_offset = -100,
+            enabled = function()
+              -- Filetypes for which buffer completions are enabled; add filetypes to extend:
+              local enabled_filetypes = {
+                'markdown',
+                'text',
+              }
+              local filetype = vim.bo.filetype
+              return vim.tbl_contains(enabled_filetypes, filetype)
+            end,
+          },
         },
       },
 
