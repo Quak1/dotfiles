@@ -38,9 +38,16 @@ map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 -- map("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- map("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- Close current buffer
 map('n', '<leader>x', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
+
+-- Replay last macro
 map('n', ',', '@@', { desc = 'Replay last used macro' })
+
+-- Show cursor diagnostics
 map('n', '<C-k>', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
+
+-- Select all - in tmux need to press 2 times
 map({ 'n', 'v', 'x' }, '<C-a>', 'gg0vG$', { noremap = true, silent = true, desc = 'Select all' })
 
 -- Copy and paste from system clipboard
