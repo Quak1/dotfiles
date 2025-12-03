@@ -11,11 +11,10 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.config/nvim: nvim
+    ~/.config/nvim: nvim-kickstart
     ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.zshrc: zshrc
     ~/.config/fuzzel: fuzzel
     ~/.config/tmux/tmux.conf: tmux.conf
     ~/.config/foot: foot
     ~/.config/spotify-player: spotify-player
-    ~/.config/nvim-kickstart: nvim-kickstart
