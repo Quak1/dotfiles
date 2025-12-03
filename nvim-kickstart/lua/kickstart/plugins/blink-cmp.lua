@@ -39,8 +39,8 @@ return {
     opts = {
       keymap = {
         preset = 'enter',
-        ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
-        ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
+        ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
       },
 
       appearance = {
@@ -53,7 +53,7 @@ return {
         accept = { auto_brackets = { enabled = true } },
         menu = { draw = { treesitter = { 'lsp' } } },
         documentation = { auto_show = true, auto_show_delay_ms = 200 },
-        list = { selection = { preselect = false, auto_insert = false } },
+        list = { selection = { preselect = true, auto_insert = false } },
       },
 
       sources = {
