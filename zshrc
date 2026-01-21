@@ -60,3 +60,4 @@ export PATH="$PATH:/home/quak/.turso"
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 alias cd="z"
+alias efiwin="sudo efibootmgr -n 0002"
