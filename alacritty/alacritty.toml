@@ -1,0 +1,12 @@
+[general]
+import = [
+    "themes/nightfox.toml"
+]
+
+[font]
+size = 15
+normal = { family = "FiraMono Nerd Font Mono", style = "Regular" }
+
+[window]
+decorations = "None"
+dimensions = { columns = 79, lines = 50 }
