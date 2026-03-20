@@ -15,3 +15,4 @@ Make sure GNU Stow is installed and run `make` to create required symlinks
   - Clipboard tool (xclip/xsel/win32yank or other depending on the platform)
 - Install [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script)
 - Install any required language setup
+- Install [`zsh-transient-prompt`](https://zsh-transient-prompt.olets.dev/installation.html)

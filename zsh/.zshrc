@@ -1,5 +1,8 @@
 eval "$(starship init zsh)"
 
+TRANSIENT_PROMPT_TRANSIENT_PROMPT=$(starship module character)
+source /opt/homebrew/share/zsh-transient-prompt/transient-prompt.zsh-theme
+
 setopt glob_dots
 
 alias gitl="git log --oneline"
