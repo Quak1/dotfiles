@@ -9,4 +9,5 @@ normal = { family = "FiraMono Nerd Font Mono", style = "Regular" }
 
 [window]
 decorations = "None"
-dimensions = { columns = 79, lines = 50 }
+dimensions = { columns = 100, lines = 50 }
+option_as_alt = "OnlyLeft"
