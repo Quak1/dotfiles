@@ -16,7 +16,7 @@ preset_column_widths = [ 0.25, 0.33, 0.50, 0.66, 0.75 ]
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
-animation_speed = 5000
+# animation_speed = 50
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
@@ -73,6 +73,15 @@ fingers_count = 4
 # bottom = 0
 # left = 0
 # right = 0
+
+[decorations.active.border]
+enabled = true
+color = "#febc2e" # yellow
+# color = "#81b29a" # green
+# color = "#89b4fa" # blue
+opacity = 1.0
+width = 2.0
+radius = "auto"
 
 [bindings]
 # Moves the focus between windows. If there are no windows when moving up or
@@ -154,7 +163,6 @@ title = "Unimportant popup window"
 dont_focus = true
 index = 100
 
-
 [windows.passwords]
 # Floating window placed on a grid. The format is "cols:rows:x:y:w:h".
 # This divides the display into a 6x6 grid and places the window at cell (1,1)
@@ -162,6 +170,11 @@ index = 100
 title = "Passwords.*"
 floating = true
 grid = "6:6:1:1:4:4"
+
+[windows.focus-friend]
+title = "Focus Friend"
+floating = true
+dont_focus = true
 
 [windows.all]
 # Matches all windows and adds a few pixels of spacing to their borders.
