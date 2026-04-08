@@ -3,3 +3,5 @@
 	name = Aldo Camacho
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false

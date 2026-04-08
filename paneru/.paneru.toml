@@ -176,6 +176,18 @@ title = "Focus Friend"
 floating = true
 dont_focus = true
 
+[windows.finder-server]
+title = "Connect to Server"
+floating = true
+
+[windows.MacMouseFix]
+title = "Mac Mouse Fix"
+floating = true
+
+[windows.FinderSettings]
+title = "Finder Settings"
+floating = true
+
 [windows.all]
 # Matches all windows and adds a few pixels of spacing to their borders.
 # Note: horizontal_padding and vertical_padding create gaps on all sides of

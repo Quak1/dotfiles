@@ -6,6 +6,7 @@ Make sure GNU Stow is installed and run `make` to create required symlinks
 
 - Terminal emulator [Alacritty](https://alacritty.org/)
 - `Fira Mono` [Nerd Font](https://www.nerdfonts.com/font-downloads)
+  - `brew install font-fira-mono-nerd-font`
 - Neovim
   - Swap `CapsLock` and `Esc`
   - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
