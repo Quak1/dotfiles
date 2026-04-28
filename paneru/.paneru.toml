@@ -119,7 +119,7 @@ window_shrink = "alt + shift - r"
 window_fullwidth = "alt - f"
 
 # Toggles the window for management. If unmanaged, the window will be "floating".
-window_manage = "ctrl + alt - t"
+window_manage = "alt + shift - x"
 
 # Stacks and unstacks a window into the left column. Each window gets a 1/N of the height.
 window_stack = "alt - ]"
@@ -186,6 +186,10 @@ floating = true
 
 [windows.FinderSettings]
 title = "Finder Settings"
+floating = true
+
+[windows.Printer]
+title = "Canon.*"
 floating = true
 
 [windows.all]
