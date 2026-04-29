@@ -12,9 +12,11 @@ return {
       enabled = true,
       animate = { enabled = false },
     },
-    explorer = {},
     picker = {
       sources = {
+        files = {
+          hidden = true,
+        },
         explorer = {
           hidden = true,
           ignored = true,
