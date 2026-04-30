@@ -74,5 +74,5 @@ map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc
 local opts = { noremap = true, silent = true }
 map('n', '<A-j>', '<Esc>:m .+1<CR>==', opts)
 map('n', '<A-k>', '<Esc>:m .-2<CR>==', opts)
-map('v', '<A-j>', ":move '>+0<CR>gv-gv", opts)
+map('v', '<A-j>', ":move '>+1<CR>gv-gv", opts)
 map('v', '<A-k>', ":move '<-2<CR>gv-gv", opts)
