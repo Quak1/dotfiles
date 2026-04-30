@@ -52,7 +52,7 @@ return {
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         accept = { auto_brackets = { enabled = true } },
         menu = { draw = { treesitter = { 'lsp' } } },
-        documentation = { auto_show = true, auto_show_delay_ms = 200 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
         list = { selection = { preselect = true, auto_insert = false } },
       },
 
@@ -63,15 +63,6 @@ return {
           buffer = {
             -- Make buffer compeletions appear at the end.
             score_offset = -100,
-            enabled = function()
-              -- Filetypes for which buffer completions are enabled; add filetypes to extend:
-              local enabled_filetypes = {
-                'markdown',
-                'text',
-              }
-              local filetype = vim.bo.filetype
-              return vim.tbl_contains(enabled_filetypes, filetype)
-            end,
           },
         },
       },

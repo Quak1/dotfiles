@@ -17,6 +17,9 @@ return {
         files = {
           hidden = true,
         },
+        grep = {
+          hidden = true,
+        },
         explorer = {
           hidden = true,
           ignored = true,
