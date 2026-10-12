@@ -172,13 +172,17 @@ floating = true
 title = "Canon.*"
 floating = true
 
-[window.Exocus]
-title = "Exocus"
+[window.exocus]
+title = "Exocus.*"
 floating = true
 dont_focus = true
 
 [window.FirefoxDownload]
 title = "Opening .*"
+floating = true
+
+[windows.FirefoxColorPicker]
+title = "Choose a color.*"
 floating = true
 
 [window.AutodeskFusionMain]
