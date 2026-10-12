@@ -80,3 +80,5 @@ vim.o.colorcolumn = '80'
 
 -- Disable wrap
 vim.o.wrap = false
+
+vim.opt.jumpoptions:append 'view'

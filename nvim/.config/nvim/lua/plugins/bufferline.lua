@@ -33,6 +33,7 @@ return {
       },
       show_buffer_close_icons = false,
       separator_style = 'slant',
+      sort_by = 'insert_after_current',
     },
   },
   config = function(_, opts)
