@@ -172,12 +172,12 @@ floating = true
 title = "Canon.*"
 floating = true
 
-[window.exocus]
-title = "Exocus.*"
+[windows.exocus]
+title = "Exocus"
 floating = true
 dont_focus = true
 
-[window.FirefoxDownload]
+[windows.FirefoxDownload]
 title = "Opening .*"
 floating = true
 
@@ -185,12 +185,12 @@ floating = true
 title = "Choose a color.*"
 floating = true
 
-[window.AutodeskFusionMain]
+[windows.AutodeskFusionMain]
 bundle_id = "com.autodesk.fusion360"
 title = ".*Autodesk Fusion Personal.*"
 floating = false
 
-[window.AutodeskFusionSide]
+[windows.AutodeskFusionSide]
 bundle_id = "com.autodesk.fusion360"
 title = ".*"
 floating = true
