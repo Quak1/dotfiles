@@ -45,6 +45,7 @@ return {
         vue = { 'prettierd' },
         json = { 'prettierd' },
         toml = { 'taplo' },
+        template = { 'djlint' },
       },
     },
   },
