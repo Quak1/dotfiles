@@ -9,12 +9,11 @@ alias gitl="git log --oneline"
 alias gitlg="git log --oneline --graph --all"
 alias venv-activate="source .venv/bin/activate"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# eval "$(fnm env --use-on-cd --shell zsh)"
 
-export PATH=$PATH:$HOME/go/bin
 export EDITOR="nvim"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 function checksha256() {
     local hash="${1#sha256:}" # remove prefix
