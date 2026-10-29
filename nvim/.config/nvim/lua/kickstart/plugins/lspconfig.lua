@@ -9,7 +9,7 @@ end
 
 -- 2. Define active LSP Servers and their custom configs
 local servers = {
-  gopls = {},
+  gopls = { filetypes = { 'go', 'gomod', 'gowork' } },
 
   arduino_language_server = {
     cmd = {
@@ -74,6 +74,14 @@ local servers = {
     filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
   },
   vue_ls = {},
+  html = {
+    filetypes = { 'html', 'gotmpl' },
+    init_options = {
+      configurationSection = { 'html', 'css', 'javascript' },
+      embeddedLanguages = { css = true, javascript = true },
+      provideFormatter = false,
+    },
+  },
 }
 
 -- 3. Standalone formatters/linters to be installed via Mason (not LSPs)
