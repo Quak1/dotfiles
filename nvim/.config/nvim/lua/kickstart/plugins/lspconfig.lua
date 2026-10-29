@@ -9,7 +9,23 @@ end
 
 -- 2. Define active LSP Servers and their custom configs
 local servers = {
-  gopls = { filetypes = { 'go', 'gomod', 'gowork' } },
+  gopls = {
+    settings = {
+      gopls = {
+        templateExtensions = { 'gotmpl', 'tmpl' },
+      },
+    },
+    on_attach = function(client, bufnr)
+      local ft = vim.bo[bufnr].filetype
+      -- Strip conflicting visual capabilities inside template buffers
+      if ft == 'gotmpl' then
+        -- 1. Disable semantic tokens so Treesitter colors are fully preserved
+        client.server_capabilities.semanticTokensProvider = nil
+        -- 2. Disable document highlight to stop greedy HTML block shading
+        client.server_capabilities.documentHighlightProvider = false
+      end
+    end,
+  },
 
   arduino_language_server = {
     cmd = {
