@@ -9,11 +9,7 @@ end
 
 -- 2. Define active LSP Servers and their custom configs
 local servers = {
-  -- clangd = {},
   gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- ts_ls = {},
 
   arduino_language_server = {
     cmd = {
@@ -84,6 +80,8 @@ local servers = {
 local formatters_and_linters = {
   'stylua',
   'markdownlint',
+  'prettierd',
+  'djlint',
 }
 
 -- 4. Setup keymaps on LSP attach
